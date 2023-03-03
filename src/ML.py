@@ -81,7 +81,7 @@ def load_model(model_fname = './src/model/XGboost'):
   logr = joblib.load(f)
   #f.close()
   #f = open(model_fname, 'rb')
-  threshold = joblib.load(f)
+  threshold = logr.threshold
   f.close()
   return logr, threshold
 
