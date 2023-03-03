@@ -68,7 +68,7 @@ class kmer_featurization:
 
     return numbering
 
-def predict(logr, X, threshold):
+def predict(logr, X, threshold=0.6):
   
   y_pred_score = logr.predict_proba(X)[:,1]
   y_pred = (y_pred_score > threshold) + 0
@@ -81,11 +81,11 @@ def load_model(model_fname = './src/model/XGboost'):
   logr = joblib.load(f)
   #f.close()
   #f = open(model_fname, 'rb')
-  threshold = logr.threshold
+  threshold = 0.6
   f.close()
   return logr, threshold
 
-def predict_on_one_batch_and_write(sORFs, logr, threshold, output_fname, k=4):
+def predict_on_one_batch_and_write(sORFs, logr, threshold=0.6, output_fname, k=4):
   class_dic = {
     1: 'coding',
     0: 'noncoding'
