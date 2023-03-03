@@ -85,7 +85,7 @@ def load_model(model_fname = './src/model/XGboost'):
   f.close()
   return logr, threshold
 
-def predict_on_one_batch_and_write(sORFs, logr, threshold=0.6, output_fname, k=4):
+def predict_on_one_batch_and_write(sORFs, logr, threshold, output_fname, k=4):
   class_dic = {
     1: 'coding',
     0: 'noncoding'
