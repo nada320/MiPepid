@@ -78,8 +78,8 @@ def load_model(model_fname = './src/model/pickleee'):
   f = open(model_fname, 'rb')
  
   logr = joblib.load(f)
-  f.close()
-  f = open(model_fname, 'rb')
+  #f.close()
+  #f = open(model_fname, 'rb')
   threshold = joblib.load(f)
   f.close()
   return logr, threshold
