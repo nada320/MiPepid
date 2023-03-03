@@ -5,7 +5,7 @@ from Bio import SeqIO
 import pandas as pd
 import sys
 
-def MiPepid(input_fname = open('./MiPepid/demo_files/sample_seqs.fasta', 'rb'), output_fname):
+def MiPepid(output_fname,input_fname = open('./MiPepid/demo_files/sample_seqs.fasta', 'rb')):
   # initialize the output file and write the header
   columns=['sORF_ID', 'sORF_seq', 'transcript_DNA_sequence_ID', 'start_at', 'end_at', 'classification', 'probability']
   df = pd.DataFrame(columns=columns)
