@@ -24,7 +24,7 @@ def MiPepid(output_fname,input_fname = open('./demo_files/sample_seqs.fasta', 'r
     transcript_seq_ID = rec.id
     this_sORFs = collect_and_name_sORFs_from_an_ORFs_object(obj_ORFs, transcript_seq_ID)
     all_sORFs += this_sORFs
-    print(all_sORFs)  
+     
 
     # Process in batch, 1 batch slightly greater than 1000
     if len(all_sORFs) > 1000:
