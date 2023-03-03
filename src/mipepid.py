@@ -50,7 +50,7 @@ if __name__=='__main__':
     output_fname = sys.argv[2]
 
   if input_fname and output_fname:
-    MiPepid(input_fname, output_fname)
+    MiPepid(output_fname,input_fname )
 
 
   
