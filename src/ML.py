@@ -69,8 +69,7 @@ class kmer_featurization:
     return numbering
 
 def predict(logr, X, threshold):
-  print(X)
-  X=X[['geneBiotype','EnsemblGeneID','transcriptBiotype','EnsemblTranscriptID','stopCodonSite ','startCodonSite','stopCodon','startCodon','DNAlength','DNAseq']]
+  
   y_pred_score = logr.predict_proba(X)[:,1]
   y_pred = (y_pred_score > threshold) + 0
   y_prob = abs(1 - y_pred - y_pred_score)  # the probability that an instance is in the assigned category
