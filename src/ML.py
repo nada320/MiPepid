@@ -78,10 +78,10 @@ def predict(logr, X, threshold):
 def load_model(model_fname = './src/model/XGboost'):
   f = open(model_fname, 'rb')
  
-  logr = pickle.load(f)
+  logr = joblib.load(f)
   #f.close()
   #f = open(model_fname, 'rb')
-  threshold = pickle.load(f)
+  threshold = joblib.load(f)
   f.close()
   return logr, threshold
 
