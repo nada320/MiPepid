@@ -9,7 +9,7 @@ def MiPepid(input_fname, output_fname):
   # initialize the output file and write the header
   columns=['sORF_ID', 'sORF_seq', 'transcript_DNA_sequence_ID', 'start_at', 'end_at', 'classification', 'probability']
   df = pd.DataFrame(columns=columns)
-  df.to_csv(output_fname, index=False)
+  df.to_csv(output_fname, index=False,encoding= 'unicode_escape')
   print('Begin writing the output file: ' + output_fname)
 
   # load the model
