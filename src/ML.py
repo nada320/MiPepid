@@ -2,7 +2,6 @@ import numpy as np
 import pickle
 import pandas as pd
 import joblib
-import cPickle as pickle
 class kmer_featurization:
 
   def __init__(self, k):
