@@ -75,13 +75,13 @@ def predict(logr, X, threshold):
   y_prob = abs(1 - y_pred - y_pred_score)  # the probability that an instance is in the assigned category
   return y_pred, y_pred_score, y_prob
 
-def load_model(model_fname = './src/model/XGboost'):
+def load_model(model_fname = './src/model/model.pkl'):
   f = open(model_fname, 'rb')
  
-  logr = joblib.load(f)
+  logr = pickle.load(f)
   #f.close()
   #f = open(model_fname, 'rb')
-  threshold = joblib.load(f)
+  threshold = pickle.load(f)
   f.close()
   return logr, threshold
 
