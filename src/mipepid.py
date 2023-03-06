@@ -5,11 +5,11 @@ from Bio import SeqIO
 import pandas as pd
 import sys
 
-def MiPepid(input_fname ,output_fname):
+def MiPepid(input_fname, output_fname):
   # initialize the output file and write the header
   columns=['sORF_ID', 'sORF_seq', 'transcript_DNA_sequence_ID', 'start_at', 'end_at', 'classification', 'probability']
   df = pd.DataFrame(columns=columns)
-  df.to_csv(output_fname, index=False,encoding= 'unicode_escape')
+  df.to_csv(output_fname, index=False)
   print('Begin writing the output file: ' + output_fname)
 
   # load the model
@@ -24,7 +24,6 @@ def MiPepid(input_fname ,output_fname):
     transcript_seq_ID = rec.id
     this_sORFs = collect_and_name_sORFs_from_an_ORFs_object(obj_ORFs, transcript_seq_ID)
     all_sORFs += this_sORFs
-     
 
     # Process in batch, 1 batch slightly greater than 1000
     if len(all_sORFs) > 1000:
@@ -51,7 +50,7 @@ if __name__=='__main__':
     output_fname = sys.argv[2]
 
   if input_fname and output_fname:
-    MiPepid(input_fname ,output_fname )
+    MiPepid(input_fname, output_fname)
 
 
   
